@@ -1,5 +1,6 @@
 name: release_tool
 description: Config-driven store release tool. Knows nothing about any one app.
+version: 1.0.1
 publish_to: none
 
 environment:

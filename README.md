@@ -67,3 +67,7 @@ dart test
 
 CI runs `dart format`, `dart analyze --fatal-infos`, the tests with coverage
 and a 70% line floor.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
