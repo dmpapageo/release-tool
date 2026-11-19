@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "type": "builds",
+      "id": "5b3e6f0a-7c2d-4e1f-8a9b-0c1d2e3f4a5b",
+      "attributes": {
+        "version": "8",
+        "uploadedDate": "2026-11-05T13:41:02-08:00",
+        "expirationDate": "2027-02-03T13:41:02-08:00",
+        "expired": false,
+        "minOsVersion": "17.0",
+        "processingState": "VALID",
+        "buildAudienceType": "APP_STORE_ELIGIBLE",
+        "usesNonExemptEncryption": false
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/builds?filter%5Bapp%5D=1234567890&sort=-uploadedDate&limit=1"
+  },
+  "meta": {
+    "paging": {
+      "total": 8,
+      "limit": 1
+    }
+  }
+}

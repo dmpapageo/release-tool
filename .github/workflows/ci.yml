@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # The repo is public, so any secret that lands here is out in the open.
+      - name: Secret scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --results=verified,unknown
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - run: dart pub get
+      - run: dart format --set-exit-if-changed .
+      - run: dart analyze --fatal-infos
+      - run: dart run coverage:test_with_coverage
+
+      - name: Coverage floor 70%
+        run: |
+          pct=$(awk -F: '/^LF/ { lf += $2 } /^LH/ { lh += $2 }
+            END { printf "%d", (lf ? lh*100/lf : 0) }' coverage/lcov.info)
+          echo "Line coverage: ${pct}%"
+          [ "$pct" -ge 70 ]

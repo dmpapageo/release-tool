@@ -1,0 +1,30 @@
+include: package:very_good_analysis/analysis_options.10.3.0.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    use_build_context_synchronously: error
+    unawaited_futures: error
+    discarded_futures: error
+    avoid_dynamic_calls: error
+    close_sinks: error
+    cancel_subscriptions: error
+    unrelated_type_equality_checks: error
+    collection_methods_unrelated_type: error
+    only_throw_errors: error
+    avoid_print: error
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gr.dart"
+    - "**/*.mocks.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "lib/l10n/**"
+    - "build/**"
+
+linter:
+  rules:
+    public_member_api_docs: false

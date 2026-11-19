@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "id": "3e9a4f2c-1b7d-4a8e-9c0f-6d5e4b3a2c1d",
+      "status": "401",
+      "code": "NOT_AUTHORIZED",
+      "title": "Authentication credentials are missing or invalid.",
+      "detail": "Provide a properly configured and signed bearer token, and make sure that it has not expired."
+    }
+  ]
+}

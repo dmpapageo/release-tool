@@ -1,0 +1,44 @@
+{
+  "kind": "androidpublisher#tracksListResponse",
+  "tracks": [
+    {
+      "track": "production",
+      "releases": [
+        {
+          "name": "7 (1.0.0)",
+          "versionCodes": ["7"],
+          "status": "completed",
+          "releaseNotes": [
+            {"language": "en-US", "text": "First release."}
+          ]
+        },
+        {
+          "name": "8 (1.1.0)",
+          "versionCodes": ["8"],
+          "status": "inProgress",
+          "userFraction": 0.2,
+          "releaseNotes": [
+            {"language": "en-US", "text": "Smoother verse swipes."}
+          ]
+        }
+      ]
+    },
+    {
+      "track": "beta",
+      "releases": []
+    },
+    {
+      "track": "internal",
+      "releases": [
+        {
+          "name": "9 (1.2.0)",
+          "versionCodes": ["9"],
+          "status": "completed",
+          "releaseNotes": [
+            {"language": "en-US", "text": "Internal test build."}
+          ]
+        }
+      ]
+    }
+  ]
+}
